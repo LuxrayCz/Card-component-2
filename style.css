@@ -1,0 +1,210 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+* {
+  --clr-primary-dark-cyan: hsl(158, 36%, 37%);
+  --clr-primary-cream: hsl(30, 38%, 92%);
+
+  --clr-neutral-dark-blue: hsl(212, 21%, 14%);
+  --clr-neutral-grayish-blue: hsl(228, 12%, 48%);
+  --clr-neutral-white: hsl(0, 0%, 100%);
+
+  --ff-montserrat: "Montserrat", sans-serif;
+  --ff-fraunces: "Fraunces", serif;
+}
+body {
+  background-color: var(--clr-primary-cream);
+}
+h1 {
+  font-family: var(--ff-fraunces);
+  font-size: 2.2rem;
+  line-height: 35px;
+  font-weight: 700;
+  color: var(--clr-neutral-dark-blue);
+}
+img {
+  border-radius: 1rem 1rem 0 0rem;
+}
+/*  */
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+.card {
+  width: 80%;
+  background-color: var(--clr-neutral-white);
+  display: grid;
+  grid-template-rows: auto auto;
+  margin-inline: auto;
+  border-radius: 1rem;
+  border-collapse: separate;
+  border-radius: 1rem;
+}
+.img-big {
+  display: none;
+}
+.img-small {
+  display: block;
+}
+.info {
+  padding: 2rem;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (min-width: 40em) {
+  .img-small {
+    display: none;
+  }
+  .img-big {
+    display: block;
+  }
+  .card {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin-inline: auto;
+    width: 600px;
+    border-radius: 1rem;
+  }
+  .info {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    border-radius: 0 1rem 1rem 0;
+  }
+  img {
+    border-radius: 1rem 0 0 1rem;
+  }
+}
+
+#perfume {
+  font-family: var(--ff-montserrat);
+  text-transform: uppercase;
+  display: flex;
+  letter-spacing: 3px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--clr-neutral-grayish-blue);
+}
+.text {
+  font-family: var(--ff-montserrat);
+  color: var(--clr-neutral-grayish-blue);
+  display: flex;
+}
+.flex h1 {
+  display: flex;
+}
+.price {
+  display: flex;
+  align-items: center;
+}
+.price-big {
+  color: var(--clr-primary-dark-cyan);
+  font-family: var(--ff-fraunces);
+  font-size: 2rem;
+}
+.price-small {
+  text-decoration: line-through;
+  color: var(--clr-neutral-grayish-blue);
+  font-family: var(--ff-montserrat);
+  margin-left: 1rem;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75em 0.5em;
+  background-color: var(--clr-primary-dark-cyan);
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--clr-neutral-white);
+  font-family: var(--ff-montserrat);
+  font-weight: 500;
+}
+button img {
+  margin-right: 0.5rem;
+  width: 1.1rem;
+  height: 1.1rem;
+}
+button:hover {
+  background-color: var(--clr-neutral-dark-blue);
+}
